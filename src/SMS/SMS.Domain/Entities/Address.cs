@@ -29,7 +29,7 @@ namespace SMS.Domain.Entities
             CityId = cityId;
         }
 
-        public Address() 
+        public Address()
             :base() 
         {
             Id = Guid.NewGuid();

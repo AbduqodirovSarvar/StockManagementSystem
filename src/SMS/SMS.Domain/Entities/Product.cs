@@ -14,13 +14,12 @@ namespace SMS.Domain.Entities
 
         public Product(
             decimal originalPrice,
-            decimal salePrice,
             decimal percentage,
             Guid categoryId
             ) : base()
         { 
             OriginalPrice = originalPrice;
-            SalePrice = salePrice;
+            SalePrice = OriginalPrice * percentage / 100;
             Percentage = percentage;
             CategoryId = categoryId;
         }

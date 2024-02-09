@@ -20,6 +20,7 @@ namespace SMS.Domain.Entities
         public City()
             : base()
         {
+            Id = Guid.NewGuid();
         }
 
         public string Name { get; set; } = string.Empty;

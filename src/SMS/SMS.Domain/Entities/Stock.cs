@@ -12,6 +12,11 @@ namespace SMS.Domain.Entities
     {
         public Stock() : base() { }
 
+        public Stock(Guid organizationId)
+        {
+            OrganizationId = organizationId;
+        }
+
         public Guid OrganizationId { get; set; }
         [ForeignKey(nameof(OrganizationId))]
         public Organization? Organization { get; set; }

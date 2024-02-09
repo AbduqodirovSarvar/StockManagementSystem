@@ -10,13 +10,23 @@ using System.Threading.Tasks;
 
 namespace SMS.Domain.Entities
 {
-    public class User : IdentityUser<Guid>
+    public sealed class User : IdentityUser<Guid>
     {
         public User() 
             : base()
         {
             Id = Guid.NewGuid();
         }
+
+        public User(string firstName, string lastName, DateOnly birthDay, Gender gender, Guid createdById)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            BirthDay = birthDay;
+            Gender = gender;
+            CreatedById = createdById;
+        }
+
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;
         public DateOnly BirthDay { get; set; }

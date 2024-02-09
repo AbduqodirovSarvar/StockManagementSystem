@@ -10,9 +10,11 @@ namespace SMS.Domain.Entities
 {
     public class Organization : Localizable
     {
-        public Organization() { }
+        public Organization() 
+            : base() { }
 
         public Organization(string name, Guid addressId)
+            : base()
         {
             Name = name;
             AddressId = addressId;
@@ -23,6 +25,5 @@ namespace SMS.Domain.Entities
         public Guid AddressId { get; set; }
         [ForeignKey(nameof(AddressId))]
         public Address? Address { get; set; }
-
     }
 }
